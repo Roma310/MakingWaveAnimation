@@ -1,2 +1,7 @@
 # MakingWaveAnimation
-The code for making and saving the animation of wave simulation. This is used improved Euler method (Heun's method) for numerical calculation with MATLAB.
+The code for making and saving the animation of wave simulation.
+
+## Used Tool
+Numerical Calculation Method : **Improved Euler method (Heun's method)**
+
+Language : **MATLAB**
