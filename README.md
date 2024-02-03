@@ -30,7 +30,9 @@ $\gamma$ : Attenuation coefficient.
 <p align="center">
   <img src="./fig/state_eq.png" alt="drawing" width="400"/>
 </p>
-where matrix $W_N$ is
+
+where matrix $W$ is
+
 <p align="center">
   <img src="./fig/matrix_W.png" alt="drawing" width="400"/>
 </p>
