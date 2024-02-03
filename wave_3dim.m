@@ -41,8 +41,8 @@ function [z, z_t] = wave_3dim(init_z, init_v, Lx, Ly, N, time, dt, velocity, gam
         Z(2*N,:) = reset;
         Z(:,1) = zeros(2*N, 1);
         Z(:,N) = zeros(2*N, 1);
-        % 障害物
-        %Z(5:10,15:18) = 0;
+        % 障害物がある場合のシミュレーションは以下を実行．以下のコードは障害物が5<=x<=10, 15<=y<=18にある場合の例
+        % Z(5:10,15:18) = 0;
         % step 2
         Z_2nd = [zeros(N, N); Z(1:N,:)];
         z_m = z_m + (A*z_m + z_2nd*W_alt)*dt/2 + (A*Z + Z_2nd*W_alt)*dt/2;
@@ -53,7 +53,7 @@ function [z, z_t] = wave_3dim(init_z, init_v, Lx, Ly, N, time, dt, velocity, gam
         z_m(2*N,:) = reset;
         z_m(:,1) = zeros(2*N, 1);
         z_m(:,N) = zeros(2*N, 1);
-        % 障害物
+        % 障害物がある場合のシミュレーションは以下を実行．以下のコードは障害物が5<=x<=10, 15<=y<=18にある場合の例
         %z_m(5:10,15:18) = 0;
         % 出力
         z(:, :, n) = z_m(1:N, :);
