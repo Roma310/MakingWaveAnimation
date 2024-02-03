@@ -4,8 +4,8 @@ Lx = 1;   Ly = 1; % 領域の辺の長さ
 Nx = 21; Ny = 21; % 分割数 (簡単のために，Nx = Nyとしておく)
 gamma = 0.01; % 減衰係数
 a = 30; % 初期形状のパラメタ
-time = 20;  dt = 1e-4;
-v = 4;
+time = 20;  dt = 1e-4; % シミュレーション時間と時間幅
+v = 4; % 波の速さ
 
 % 格子幅
 dx = Lx/Nx; dy = Ly/Ny;
@@ -56,22 +56,3 @@ for k = 1:10:num/50
     writeVideo(v,frame);
 end
 close(v); % ファイルを閉じる
-
-% step 3
-% switch exporttype % 今回は出力方法を exporttype 変数で指定することにする
-%     case 'mp4' % 普通の動画の場合
-%         video = VideoWriter('filename.mp4', 'MPEG-4'); % ファイル名や出力形式などを設定
-%         open(video); % 書き込むファイルを開く
-%         writeVideo(video, frames); % ファイルに書き込む
-%         close(video); % 書き込むファイルを閉じる
-%     case 'gif'
-%         filename = 'filename.gif'; % ファイル名
-%         for i = 1:100
-%             [A, map] = rgb2ind(frame2im(frames(i)), 256); % 画像形式変換
-%             if i == 1
-%                 imwrite(A, map, filename, 'gif', 'DelayTime', 1/30); % 出力形式(30FPS)を設定
-%             else
-%                 imwrite(A, map, filename, 'gif', 'DelayTime', 1/30, 'WriteMode', 'append'); % 2フレーム目以降は"追記"の設定も必要
-%             end
-%         end
-% end
