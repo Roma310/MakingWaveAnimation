@@ -9,7 +9,7 @@ Numerical Calculation Method : **Improved Euler method (Heun's method)**
 
 Language : **MATLAB**
 
-## Detail of Algorithm
+## Detail
 ### Preliminary
 $O_N$ : $N \times N$ zero matrix.
 
@@ -19,9 +19,9 @@ $\Delta x$, $\Delta y$ : Lengths of grid in the simulation area.
 
 $z_{ij}$ : displacement of a grid point $(i \Delta x,\ j \Delta y)$ where $i$ and $j$ are integer and satisfy $0 \leq i < N$ and $0 \leq j < N$.
 
-### Detail
+### Detail of Algorithm
 (1) Displacement matrix $Z$ is defined as $Z = (z_{ij})$. Velocity matrix is $V := \dfrac{d Z}{d t} = \left(\dfrac{d}{d t} z_{ij}\right)$. Let state matrix $X := [Z, V]^T$ .
 
-(2) The differential equation that $X$ obeys is as follows
+(2) The differential equation (state equation) that $X$ obeys is as follows
 
 (3) The above equation is discretized and carry out numerical calculation. However, due to the fixed-edge condition, the outermost components of $Z$ and $V$ ($4N - 4$ components in total, respectively) are reset to 0 each time the calculation is performed.
